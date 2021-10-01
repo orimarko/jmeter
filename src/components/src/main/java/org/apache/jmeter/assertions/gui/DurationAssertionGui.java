@@ -102,7 +102,7 @@ public class DurationAssertionGui extends AbstractAssertionGui {
         add(makeTitlePanel(), BorderLayout.NORTH);
 
         JPanel mainPanel = new VerticalPanel();
-        mainPanel.add(createScopePanel());
+        mainPanel.add(createScopePanel(false, true, false, false));
 
         // USER_INPUT
         VerticalPanel durationPanel = new VerticalPanel();
