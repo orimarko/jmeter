@@ -46,17 +46,11 @@ public class ScopePanel extends JPanel implements ActionListener, FocusListener 
     private final JRadioButton variableButton;
     private final JTextField variableName;
 
-    public ScopePanel(){
-        this(false);
-    }
-
-    public ScopePanel(boolean enableVariableButton) {
-        this(enableVariableButton, true, true);
-    }
-
     public ScopePanel(boolean enableVariableButton, boolean enableParentAndSubsamples, boolean enableSubsamplesOnly, boolean enableParentOnly) {
         if (enableParentOnly) { 
             parentButton = new JRadioButton(JMeterUtils.getResString("sample_scope_parent")); //$NON-NLS-1$
+        } else {
+            parentButton = null;
         }
         if(enableParentAndSubsamples) {
             allButton = new JRadioButton(JMeterUtils.getResString("sample_scope_all")); //$NON-NLS-1$
