@@ -290,7 +290,11 @@ public class JSyntaxTextArea extends RSyntaxTextArea {
      *            The initial text to be set
      */
     public void setInitialText(String string) {
-        setText(StringUtils.defaultString(string, ""));
+        try {
+            setText(StringUtils.defaultString(string, ""));
+        } catch (Exception e) {
+            log.error("Dubious problem while setting text to {}", string, e);
+        }
         discardAllEdits();
     }
 
