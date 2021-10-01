@@ -59,29 +59,16 @@ public abstract class AbstractScopedJMeterGuiComponent extends AbstractJMeterGui
      *
      * @return the scope settings panel
      */
-    protected JPanel createScopePanel() {
-        return createScopePanel(false);
-    }
-
-    /**
-     * Create the scope settings panel.
-     * @param enableVariable set true to enable the variable panel
-     * @return the scope settings panel
-     */
-    protected JPanel createScopePanel(boolean enableVariable) {
-        return createScopePanel(enableVariable, true, true);
-    }
-
-    /**
-     * Create the scope settings panel.
-     * @param enableVariable set true to enable the variable panel
-     * @param enableParentAndSubsamples set true to enable the parent and sub-samples
-     * @param enableSubsamplesOnly set true to enable the sub-samples only
-     * @return the scope settings panel
-     */
-    protected JPanel createScopePanel(boolean enableVariable, boolean enableParentAndSubsamples, boolean enableSubsamplesOnly) {
-        scopePanel = new ScopePanel(enableVariable, enableParentAndSubsamples, enableSubsamplesOnly);
-        return scopePanel;
+    protected JPanel createScopePanel(boolean... optionalFlag) {
+        boolean enableVariable = (optionalFlag.length >= 1) ? optionalFlag[0] : false;
+        if (optionalFlag.length <= 1 {
+            return createScopePanel(enableVariable, true, true, true);
+        } else {
+            boolean enableParentAndSubsamples = (optionalFlag.length >= 2) ? optionalFlag[1] : false;
+            boolean enableSubsamplesOnly = (optionalFlag.length >= 3) ? optionalFlag[2] : false;
+            boolean enableParentOnly = (optionalFlag.length >= 4) ? optionalFlag[3] : false;
+            return new ScopePanel(enableVariable, enableParentAndSubsamples, enableSubsamplesOnly, enableParentOnly);
+        }
     }
 
     /**
