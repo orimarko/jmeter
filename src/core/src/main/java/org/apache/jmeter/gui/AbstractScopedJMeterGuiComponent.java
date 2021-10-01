@@ -61,9 +61,9 @@ public abstract class AbstractScopedJMeterGuiComponent extends AbstractJMeterGui
      */
     protected JPanel createScopePanel(boolean... optionalFlag) {
         boolean enableVariable = (optionalFlag.length >= 1) ? optionalFlag[0] : false;
-        boolean enableParentAndSubsamples = (optionalFlag.length >= 2) ? optionalFlag[1] : false;
-        boolean enableSubsamplesOnly = (optionalFlag.length >= 3) ? optionalFlag[2] : false;
-        boolean enableParentOnly = (optionalFlag.length >= 4) ? optionalFlag[3] : false;
+        boolean enableParentAndSubsamples = (optionalFlag.length >= 2) ? optionalFlag[1] : true;
+        boolean enableSubsamplesOnly = (optionalFlag.length >= 3) ? optionalFlag[2] : true;
+        boolean enableParentOnly = (optionalFlag.length >= 4) ? optionalFlag[3] : true;
         return new ScopePanel(enableVariable, enableParentAndSubsamples, enableSubsamplesOnly, enableParentOnly);
         }
     }
