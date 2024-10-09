@@ -52,6 +52,16 @@
  These properties are normally resolved when the class is loaded.
  This generally occurs before the test plan starts, so it's not possible to change the settings by using the <code><funclink name="__setProperty()"/></code> function.
 </note>
+    <p>
+
+</p>
+ <note>
+ Each component has common porperties:
+   <properties>
+        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        <property name="Comments" required="No">Free text for additional details.</property>
+    </properties>
+</note>
 <p>
 </p>
 </description>
@@ -77,7 +87,7 @@ Latency is set to the time it takes to login.
 </p>
 </description>
 <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        
         <property name="Server Name or IP" required="Yes">Domain name or IP address of the FTP server.</property>
         <property name="Port" required="No">Port to use. If this is <code>&gt;0</code>, then this specific port is used,
            otherwise JMeter uses the default FTP port.</property>
@@ -217,7 +227,7 @@ https.default.protocol=SSLv3
 <figure width="950" height="618" image="graphql-http-request-vars.png">Variables field for GraphQL HTTP Request</figure>
 
 <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        
         <property name="Server" required="No">
              Domain name or IP address of the web server, e.g. <code>www.example.com</code>. [Do not include the <code>http://</code> prefix.]
              Note: If the "<code>Host</code>" header is defined in a Header Manager, then this will be used
@@ -558,7 +568,7 @@ the additional variables for rows four, five and six will be removed.
 </description>
 
 <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        
         <property name="Variable Name of Pool declared in JDBC Connection Configuration" required="Yes">
         Name of the JMeter variable that the connection pool is bound to.
         This must agree with the '<code>Variable Name</code>' field of a <complink name="JDBC Connection Configuration"/>.
@@ -782,7 +792,7 @@ This will not have any impact on existing Test plans.
     </li>
   </ol>
   <properties>
-    <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+    
     <property name="Server Name or IP" required="Yes">Domain name or IP address of the LDAP server.
       JMeter assumes the LDAP server is listening on the default port (<code>389</code>).</property>
     <property name="Port" required="Yes">Port to connect to (default is <code>389</code>).</property>
@@ -828,7 +838,7 @@ This will not have any impact on existing Test plans.
         omitting the password will not fail this test, a wrong password will.
         (N.B. this is stored unencrypted in the test plan)</p>
         <properties>
-          <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+          
           <property name="Servername" required="Yes">The name (or IP-address) of the LDAP server.</property>
           <property name="Port" required="No">The port number that the LDAP server is listening to. If this is omitted
             JMeter assumes the LDAP server is listening on the default port(389).</property>
@@ -847,7 +857,7 @@ This will not have any impact on existing Test plans.
         <p>This is simply the operation to end a session.
         It is equal to the LDAP "<code>unbind</code>" operation.</p>
         <properties>
-          <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+          
         </properties>
       </dd>
       <dt><b>Single bind/unbind</b></dt>
@@ -856,7 +866,7 @@ This will not have any impact on existing Test plans.
         It can be used for an authentication request/password check for any user. It will open a new session, just to
         check the validity of the user/password combination, and end the session again.</p>
         <properties>
-          <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+          
           <property name="Username" required="Yes">Full distinguished name of the user as which you want to bind.</property>
           <property name="Password" required="No">Password for the above user. If omitted it will result in an anonymous bind.
             If it is incorrect, the sampler will return an error. (N.B. this is stored unencrypted in the test plan)</property>
@@ -868,7 +878,7 @@ This will not have any impact on existing Test plans.
        also for moving an entry or a complete subtree to a different place in
        the LDAP tree.</p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Old entry name" required="Yes">The current distinguished name of the object you want to rename or move,
            relative to the given DN in the thread bind operation.</property>
          <property name="New distinguished name" required="Yes">The new distinguished name of the object you want to rename or move,
@@ -880,7 +890,7 @@ This will not have any impact on existing Test plans.
        <p>This is the LDAP "<code>add</code>" operation. It can be used to add any kind of
        object to the LDAP server.</p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Entry DN" required="Yes">Distinguished name of the object you want to add, relative to the given DN in the thread bind operation.</property>
          <property name="Add test" required="Yes">A list of attributes and their values you want to use for the object.
            If you need to add a multiple value attribute, you need to add the same attribute with their respective
@@ -892,7 +902,7 @@ This will not have any impact on existing Test plans.
        <p> This is the LDAP "<code>delete</code>" operation, it can be used to delete an
        object from the LDAP tree</p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Delete" required="Yes">Distinguished name of the object you want to delete, relative to the given DN in the thread bind operation.</property>
        </properties>
      </dd>
@@ -900,7 +910,7 @@ This will not have any impact on existing Test plans.
      <dd>
        <p>This is the LDAP "<code>search</code>" operation, and will be used for defining searches.</p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Search base" required="No">Distinguished name of the subtree you want your
            search to look in, relative to the given DN in the thread bind operation.</property>
          <property name="Search Filter" required="Yes">searchfilter, must be specified in LDAP syntax.</property>
@@ -918,7 +928,7 @@ This will not have any impact on existing Test plans.
        <p>This is the LDAP "<code>modify</code>" operation. It can be used to modify an object. It
        can be used to add, delete or replace values of an attribute. </p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Entry name" required="Yes">Distinguished name of the object you want to modify, relative
            to the given DN in the thread bind operation</property>
          <property name="Modification test" required="Yes">The attribute-value-opCode triples. <br/>
@@ -937,7 +947,7 @@ This will not have any impact on existing Test plans.
        attribute "<code>member</code>" of an object of the type <code>groupOfNames</code>.
        If the compare operation fails, this test fails with errorcode <code>49</code>.</p>
        <properties>
-         <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+         
          <property name="Entry DN" required="Yes">The current distinguished name of the object of
            which you want  to compare an attribute, relative to the given DN in the thread bind operation.</property>
          <property name="Compare filter" required="Yes">In the form "<code>attribute=value</code>"</property>
@@ -999,7 +1009,7 @@ for all the methods. For an example of how to implement either interface, refer 
 </description>
 
 <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        
         <property name="Server" required="Yes">Domain name or IP address of the web server.</property>
         <property name="Protocol" required="No (defaults to http">Scheme</property>
         <property name="Port" required="No (defaults to 80)">Port the web server is listening to.</property>
@@ -1200,7 +1210,7 @@ e.g. <source>props.get("START.HMS");
 props.put("PROP1","1234");</source>
 </note>
 <properties>
-    <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+    
     <property name="Scripting Language" required="Yes">Name of the JSR223 scripting language to be used.
       <note>There are other languages supported than those that appear in the drop-down list.
         Others may be available if the appropriate jar is installed in the JMeter lib directory.<br/>
@@ -1940,7 +1950,6 @@ MongoDB Script is more suitable for functional testing or test setup (setup/tear
 </description>
 
 <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
         <property name="MongoDB Source" required="Yes">
         Name of the JMeter variable that the MongoDB connection is bound to.
         This must agree with the '<code>MongoDB Source</code>' field of a MongoDB Source Config.
@@ -1976,8 +1985,6 @@ MongoDB Script is more suitable for functional testing or test setup (setup/tear
     </description>
 
     <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
-        <property name="Comments" required="No">Free text for additional details.</property>
         <property name="Cypher statement" required="Yes">
             The query to execute.
         </property>
@@ -4527,7 +4534,7 @@ DB db = MongoDBHolder.getDBFromSource("value of property MongoDB Source",
         from the supplied Connection settings.
     </description>
     <properties>
-        <property name="Name" required="No">Descriptive name for this sampler that is shown in the tree.</property>
+        
         <property name="Comments" required="No">Free text for additional details.</property>
         <property name="Bolt URI" required="Yes">The database URI.</property>
         <property name="Username" required="No">User account.</property>
